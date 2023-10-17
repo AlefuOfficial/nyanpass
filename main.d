@@ -1,6 +1,5 @@
 import std.net.curl;
 import std.stdio;
-import std.parallelism;
 import std.concurrency;
 import std.string;
 
@@ -16,7 +15,9 @@ void nyanpass()
             http.addRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
             auto content = post("https://nyanpass.com/add.php", payload, http);
             writeln(content);
-        } catch (Exception e){
+        }
+        catch (Exception e)
+        {
             continue;
         }
     }
@@ -24,7 +25,7 @@ void nyanpass()
 
 void main()
 {
-    size_t num = 10;
+    size_t num = 100;
     for (size_t i = 0; i <= num; ++i)
     {
         spawn(&nyanpass);
