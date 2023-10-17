@@ -25,7 +25,7 @@ void nyanpass()
 
 void main()
 {
-    size_t num = 100;
+    size_t num = 10;
     for (size_t i = 0; i <= num; ++i)
     {
         spawn(&nyanpass);
